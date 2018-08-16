@@ -2,6 +2,13 @@
 # tasks file for motioneye
 - include: pkgs-{{ ansible_pkg_mgr }}.yml
 
+- name: insert/update v4l2 kernel module in /etc/modules
+  blockinfile:
+    path: /etc/modules
+    block: |
+       "# load v4l2 kernel module"
+       bcm2835-v4l2
+
 - name: add motioneye user
   user:
     name: "{{ motioneye_user }}"
