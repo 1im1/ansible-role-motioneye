@@ -6,7 +6,7 @@
   blockinfile:
     path: /etc/modules
     block: |
-       "# load v4l2 kernel module"
+       # load v4l2 kernel module
        bcm2835-v4l2
 
 - name: add motioneye user
